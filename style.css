@@ -393,7 +393,13 @@ body {
 .showreel h1 { font-size: 2.8rem; margin: 0; }
 .show-desc { opacity: 0.95; color: rgba(255,255,255,0.95); }
 .penguin-row { display:flex; gap:18px; align-items: flex-end; }
-.penguin { font-size: 4.2rem; display:inline-block; transform-origin:50% 80%; animation: peng-dance 0.9s ease-in-out infinite; }
+.penguin {
+    display: inline-block;
+    width: 72px;
+    height: auto;
+    transform-origin: 50% 80%;
+    animation: peng-dance 0.9s ease-in-out infinite;
+}
 
 @keyframes peng-dance {
     0% { transform: translateY(0) rotate(-4deg); }

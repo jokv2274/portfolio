@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Penguin">
+  <title>Penguin</title>
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111"/>
+      <stop offset="100%" stop-color="#222"/>
+    </linearGradient>
+  </defs>
+  <!-- body -->
+  <ellipse cx="100" cy="165" rx="60" ry="80" fill="url(#bodyGrad)" />
+  <!-- white belly -->
+  <ellipse cx="100" cy="175" rx="38" ry="60" fill="#fff" />
+  <!-- face -->
+  <circle cx="100" cy="90" r="36" fill="#111" />
+  <circle cx="100" cy="98" r="28" fill="#fff" />
+  <!-- eyes -->
+  <circle cx="90" cy="95" r="4" fill="#111" />
+  <circle cx="110" cy="95" r="4" fill="#111" />
+  <!-- beak -->
+  <polygon points="100,105 92,118 108,118" fill="#ff9a3c" />
+  <!-- feet -->
+  <ellipse cx="75" cy="240" rx="12" ry="6" fill="#ff9a3c" />
+  <ellipse cx="125" cy="240" rx="12" ry="6" fill="#ff9a3c" />
+</svg>
