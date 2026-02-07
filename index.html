@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portefølje side</title>
+    <meta name="description" content="Portefølje for Annisette — film, klipp og visuelle historier">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Velkommen til min portefølje</h1>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="logo"><a href="index.html" class="logo-link">Annisette</a></h2>
+            <ul class="nav-menu">
+                <li><a href="om-meg.html" class="nav-link">Om Meg</a></li>
+                <li><a href="#prosjekter" class="nav-link">Prosjekter</a></li>
+                <li><a href="#bilder" class="nav-link">Bilder</a></li>
+                <li><a href="#kontakt" class="nav-link">12345</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fortellinger mellom lys og mørke</h1>
+            <p class="intro">
+                Jeg jobber med film og klipp som utforsker kontraster, uttrykk og visuelle historier.
+                Prosjektene mine handler om stemning, rytme og øyeblikk som får lov til å leve.
+            </p>
+        </div>
+
+        <div class="hero-image">
+            <img src="annisette.jpg" alt="Portrett av filmskaper Annisette">
+        </div>
+    </section>
+
+    <section id="prosjekter" class="projects">
+        <h2>Prosjekter</h2>
+        <div class="projects-grid">
+            <a class="project-card" href="prosjekt-1.html">
+                <img src="1.jpg" alt="Prosjekt 1">
+                <h3>Prosjekt 1</h3>
+                <p>En utforskning av lys og skygge i filmisk rom. Fokus på visuell spenning og emosjonell dybde gjennom monokromt uttrykk.</p>
+            </a>
+
+            <a class="project-card" href="prosjekt-2.html">
+                <img src="2.jpg" alt="Prosjekt 2">
+                <h3>Prosjekt 2</h3>
+                <p>Rytmisk klipp som deler mennesker og deres miljø. En studie i bevegelse, farge og hvordan øyeblikk forteller deres egen historie.</p>
+            </a>
+
+            <a class="project-card" href="prosjekt-3.html">
+                <img src="3.jpg" alt="Prosjekt 3">
+                <h3>Prosjekt 3</h3>
+                <p>En inntrengelse i stillhet og puls. Prosjektet utforsker kontraster gjennom lyddesign og visuell komposisjon som skaper spenning.</p>
+            </a>
+        </div>
+    </section>
 </body>
 </html>
