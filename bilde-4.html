@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Eiker Rock - Annisette</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="image-page">
+    <button class="nav-arrow nav-prev" onclick="prevImage()">‹</button>
+    <div class="image-container">
+      <img src="4.png" alt="Bilde 4">
+      <h1>Konsert</h1>
+      <p>Eiker Rock.</p>
+      <p><a href="index.html#bilder" class="cta-btn">Tilbake til bilder</a></p>
+    </div>
+    <button class="nav-arrow nav-next" onclick="nextImage()">›</button>
+  </main>
+  <script>
+    function prevImage() { window.location.href = 'bilde-8.html'; }
+    function nextImage() { window.location.href = 'bilde-5.html'; }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    });
+  </script>
+</body>
+</html>
