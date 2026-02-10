@@ -36,18 +36,18 @@ body {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #3EC1E6;
+    color: #FFFFFF;
     letter-spacing: 1px;
 }
 
 .logo-link {
-    color: #3EC1E6;
+    color: #FFFFFF;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .logo-link:hover {
-    color: #5FD4F3;
+    color: #3EC1E6;
 }
 
 .nav-menu {
