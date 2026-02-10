@@ -133,6 +133,18 @@
             lightbox.style.display = 'none';
         }
         
+        // Disable right-click context menu on images
+        document.addEventListener('contextmenu', function(e) {
+            const carousel = document.querySelector('.carousel-track');
+            const lightboxImg = document.getElementById('lightbox-img');
+            if (carousel && carousel.contains(e.target)) {
+                e.preventDefault();
+            }
+            if (lightboxImg && lightboxImg === e.target) {
+                e.preventDefault();
+            }
+        }, false);
+        
         // Initialize on page load
         window.addEventListener('load', updateCarousel);
     </script>

@@ -604,6 +604,18 @@ body {
     background-color: rgba(62, 193, 230, 1);
 }
 
+/* Disable image interactions */
+.carousel-item img {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: auto;
+}
+
+#lightbox-img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
