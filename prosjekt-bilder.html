@@ -47,14 +47,15 @@
     </section>
 
     <script>
-        let currentIndex = 2; // Middle item
+        let currentIndex = 2; // Middle item (0-4)
         const items = ['4.png', '5.png', '6.png', '7.png', '8.png'];
         
         function updateCarousel() {
             const track = document.querySelector('.carousel-track');
-            const children = track.children;
+            const children = Array.from(track.children);
             const indicators = document.querySelectorAll('.indicator');
             
+            // Update carousel item classes based on position
             children.forEach((child, i) => {
                 child.className = 'carousel-item';
                 if (i === 0) child.classList.add('carousel-prev-prev');
@@ -64,13 +65,21 @@
                 else if (i === 4) child.classList.add('carousel-next-next');
             });
             
+            // Update indicator states
             indicators.forEach((ind, i) => {
-                ind.classList.toggle('active', i === currentIndex);
+                if (i === currentIndex) {
+                    ind.classList.add('active');
+                } else {
+                    ind.classList.remove('active');
+                }
             });
         }
         
         function moveCarousel(direction) {
+            currentIndex = (currentIndex + direction + items.length) % items.length;
+            
             const track = document.querySelector('.carousel-track');
+            
             if (direction === 1) {
                 // Move right: take first, append to end
                 track.appendChild(track.firstElementChild);
@@ -78,12 +87,14 @@
                 // Move left: take last, prepend to start
                 track.prepend(track.lastElementChild);
             }
-            currentIndex = (currentIndex + direction + items.length) % items.length;
+            
             updateCarousel();
         }
         
         function goToSlide(index) {
             const diff = index - currentIndex;
+            if (diff === 0) return;
+            
             if (diff > 0) {
                 for (let i = 0; i < diff; i++) moveCarousel(1);
             } else {
@@ -99,6 +110,9 @@
                 moveCarousel(1);
             }
         });
+        
+        // Initialize on page load
+        window.addEventListener('load', updateCarousel);
     </script>
 </body>
 </html>
