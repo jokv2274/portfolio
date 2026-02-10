@@ -90,6 +90,15 @@
                 for (let i = 0; i < -diff; i++) moveCarousel(-1);
             }
         }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                moveCarousel(-1);
+            } else if (event.key === 'ArrowRight') {
+                moveCarousel(1);
+            }
+        });
     </script>
 </body>
 </html>
