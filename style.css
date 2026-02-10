@@ -227,6 +227,18 @@ body {
     max-width: 620px;
 }
 
+.video-container {
+    margin: 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.video-container iframe {
+    display: block;
+    width: 100%;
+}
+
 @media (max-width: 800px) {
     .project-page .project-hero {
         flex-direction: column;
