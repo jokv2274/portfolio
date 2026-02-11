@@ -620,3 +620,156 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 5%;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    /* Hero section */
+    .hero {
+        flex-direction: column;
+        padding: 30px 5%;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero .intro {
+        font-size: 1rem;
+    }
+    
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Projects */
+    .projects {
+        padding: 50px 5%;
+    }
+    
+    .projects h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    /* Carousel */
+    .carousel-section {
+        padding: 40px 5%;
+    }
+    
+    .carousel-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .carousel-container {
+        gap: 10px;
+    }
+    
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 10px 12px;
+    }
+    
+    .carousel-prev-prev,
+    .carousel-next-next {
+        display: none;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 80px;
+        height: 110px;
+    }
+    
+    .carousel-active {
+        width: 220px;
+        height: 290px;
+    }
+    
+    /* About section */
+    .about-section {
+        padding: 50px 5%;
+    }
+    
+    .about-content h1 {
+        font-size: 2rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    /* Images gallery */
+    .images {
+        padding: 40px 5%;
+    }
+    
+    .images-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+    
+    /* Lightbox */
+    .lightbox-content {
+        max-width: 95%;
+        max-height: 95vh;
+    }
+    
+    .lightbox-content img {
+        max-height: 80vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        gap: 10px;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .projects h2,
+    .carousel-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .carousel-active {
+        width: 180px;
+        height: 240px;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 60px;
+        height: 80px;
+    }
+}
