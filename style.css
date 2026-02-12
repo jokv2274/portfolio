@@ -8,6 +8,10 @@ html {
     box-sizing: border-box;
 }
 
+a {
+    list-style: none;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0D1F3C;
