@@ -1,44 +1,36 @@
 # GitHub Copilot instructions for this repository
 
-Purpose
-- Help AI contributors understand and be immediately productive with this small static portfolio site.
+## Purpose
+- Help AI contributors be productive in this static portfolio site (Norwegian content).
 
-Repository overview
-- This is a minimal static site with an entry page at `index.html` and a brief `README.md` describing the project.
-- There are no build tools, package manifests, or server-side components in the repo.
+## Repository overview
+- Multi-page static site: entry page is [index.html](index.html), with additional pages like [om-meg.html](om-meg.html) and [prosjekt-bilder.html](prosjekt-bilder.html).
+- Styling lives in [style.css](style.css); minimal client-side behavior (if any) in [Script.js](Script.js).
+- Media assets (images/video) are stored under [assets/](assets/).
 
-What to do first
-- Open and inspect `index.html` for markup and content. This is the single source of truth for the site.
-- Review `README.md` for any author notes or language hints (content is in Norwegian).
+## What to inspect first
+- Start with [index.html](index.html) for site structure, navigation links, and hero content.
+- Cross-check shared layout patterns in other pages (e.g., nav and sections) for consistency.
+- Review [README.md](README.md) for brief project notes.
 
-Developer workflows (what works here)
-- Local preview: open `index.html` directly in a browser (double-click) or run a simple HTTP server:
-  - Python 3: `python -m http.server 8000` then visit http://localhost:8000
-  - PowerShell (Windows): `Start-Process .\index.html`
-- No build or test commands present — do not add assumptions about frameworks or toolchains.
+## Developer workflows
+- Local preview: open [index.html](index.html) directly in a browser or serve the folder with a simple static server.
+- No build, test, or lint tooling is present—avoid introducing frameworks or package managers unless asked.
 
-Project-specific conventions and patterns
-- Single-file site: prefer small, incremental edits to `index.html` rather than scaffolding new frameworks.
-- Language: content is primarily Norwegian; preserve tone and localization when editing copy.
-- Keep markup simple and semantic; there are no CSS or JS files in this repo by default.
+## Project-specific conventions
+- Content is Norwegian; preserve tone and language when editing copy.
+- Keep HTML semantic and lightweight (sections, headers, navs), mirroring existing structure.
+- Image references are relative and currently in the project root; verify paths if moving assets.
+- Navigation uses in-page anchors (e.g., #prosjekter) plus separate HTML pages; keep links in sync across pages.
 
-Examples to follow
-- To change the page title, update the `<title>` element in `index.html`.
-- To add content sections, add semantic elements (`<section>`, `<header>`, `<footer`) inside the `<body>`.
+## Examples from the codebase
+- Update the site title or meta description in the <head> of [index.html](index.html).
+- Add a new project card in the projects grid in [index.html](index.html).
+- Global styling adjustments should go to [style.css](style.css).
 
-Integration points and externals
-- There are no external services, APIs, or CI configured in the repository. If you add CI or dependencies, document them in `README.md`.
+## Integration points
+- No external APIs, CI, or hosting configs are present. Document any new dependencies or tooling in [README.md](README.md).
 
-When to ask the user
-- If you plan to introduce a build tool, package manager, or CI, ask whether they want that complexity.
-- If you need credentials, deploy targets, or domain info, ask for specifics before adding configuration files.
-
-Editing & PR guidance
-- Keep changes minimal and focused: update `index.html` for content/layout changes and `README.md` for documentation.
-- Provide a short PR description explaining the purpose and manual verification steps (how to preview locally).
-
-If anything is missing
-- Ask the repository owner for preferred branching, deploy steps, or whether they want a static-site generator.
-
-Contact
-- When uncertain, open an issue or tag the repo owner with clear, scoped questions.
+## When to ask the user
+- If introducing new build steps, a static-site generator, or deployment configuration, confirm first.
+- If moving assets or restructuring pages, confirm desired URLs and navigation behavior.
