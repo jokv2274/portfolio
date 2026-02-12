@@ -9,7 +9,7 @@ html {
 }
 
 a {
-    list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -152,6 +152,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .project-card:hover {
