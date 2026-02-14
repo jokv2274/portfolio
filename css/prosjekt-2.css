@@ -1,0 +1,42 @@
+/* Project page layout */
+.project-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-page .project-hero {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 80px 10%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-page .project-image img {
+    width: 320px;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.project-page .project-info {
+    max-width: 620px;
+}
+
+@media (max-width: 800px) {
+    .project-page .project-hero {
+        flex-direction: column;
+        padding: 40px 6%;
+    }
+
+    .project-page .project-image img {
+        width: 100%;
+        height: auto;
+    }
+}

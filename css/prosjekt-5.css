@@ -1,0 +1,76 @@
+/* Sideprosjekter page */
+.project-page-video {
+    min-height: 100vh;
+    padding: 40px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-video-section {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-info-below {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project-info-below h1 {
+    margin-bottom: 20px;
+}
+
+.project-info-below p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #B0B0B0;
+    margin-bottom: 20px;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.project-card-video {
+    background-color: #0D1F3C;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-video:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(62, 193, 230, 0.3);
+}
+
+.project-card-video img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card-video h3 {
+    font-size: 1.3rem;
+    color: #3EC1E6;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card-video p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #B0B0B0;
+    margin: 0 20px 20px 20px;
+}
