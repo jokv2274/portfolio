@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bilder</title>
     <meta name="description" content="Bilder - Bildegalleri">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,11 +27,11 @@
             <button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button>
             
             <div class="carousel-track">
-                <div class="carousel-item carousel-prev-prev"><img src="8.png" alt="Bilde 8" onclick="openLightbox(this)" draggable="false"></div>
-                <div class="carousel-item carousel-prev"><img src="4.png" alt="Bilde 4" onclick="openLightbox(this)" draggable="false"></div>
-                <div class="carousel-item carousel-active"><img src="5.png" alt="Bilde 5" onclick="openLightbox(this)" draggable="false"></div>
-                <div class="carousel-item carousel-next"><img src="6.png" alt="Bilde 6" onclick="openLightbox(this)" draggable="false"></div>
-                <div class="carousel-item carousel-next-next"><img src="7.png" alt="Bilde 7" onclick="openLightbox(this)" draggable="false"></div>
+                <div class="carousel-item carousel-prev-prev"><img src="assets/images/eiker-rock/8.png" alt="Bilde 8" onclick="openLightbox(this)" draggable="false"></div>
+                <div class="carousel-item carousel-prev"><img src="assets/images/eiker-rock/4.png" alt="Bilde 4" onclick="openLightbox(this)" draggable="false"></div>
+                <div class="carousel-item carousel-active"><img src="assets/images/eiker-rock/5.png" alt="Bilde 5" onclick="openLightbox(this)" draggable="false"></div>
+                <div class="carousel-item carousel-next"><img src="assets/images/eiker-rock/6.png" alt="Bilde 6" onclick="openLightbox(this)" draggable="false"></div>
+                <div class="carousel-item carousel-next-next"><img src="assets/images/eiker-rock/7.png" alt="Bilde 7" onclick="openLightbox(this)" draggable="false"></div>
             </div>
             
             <button class="carousel-btn next" onclick="moveCarousel(1)">›</button>
@@ -55,7 +55,13 @@
 
     <script>
         let currentIndex = 2; // Middle item (0-4)
-        const items = ['4.png', '5.png', '6.png', '7.png', '8.png'];
+        const items = [
+            'assets/images/eiker-rock/4.png',
+            'assets/images/eiker-rock/5.png',
+            'assets/images/eiker-rock/6.png',
+            'assets/images/eiker-rock/7.png',
+            'assets/images/eiker-rock/8.png'
+        ];
         
         function updateCarousel() {
             const track = document.querySelector('.carousel-track');
