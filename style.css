@@ -597,6 +597,45 @@ h1 {
     overflow: hidden;
 }
 
+/* Gallery section for single image display */
+.gallery-section {
+    padding: 80px 10%;
+    background: transparent;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #E6E6E6;
+}
+
+.gallery-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.image-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .image-page .image-container {
     padding: 60px 5%;
     max-width: 1200px;
