@@ -231,3 +231,24 @@ h1 {
    We add this class automatically via Script.js for images >= 180px. */
 .disable-visual-search { pointer-events: none; }
 
+/* Lightbox navigation buttons */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(10,20,35,0.6);
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.lightbox-nav:hover { background: rgba(10,20,35,0.85); }
+.lightbox-nav.prev { left: 16px; }
+.lightbox-nav.next { right: 16px; }
+
