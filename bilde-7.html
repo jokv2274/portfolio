@@ -48,35 +48,64 @@
     <!-- Lightbox modal -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-nav prev" aria-label="Forrige">‹</button>
             <img id="lightbox-img" src="" alt="Full size image" onclick="closeLightbox()" style="cursor: pointer;" draggable="false">
+            <button class="lightbox-nav next" aria-label="Neste">›</button>
         </div>
     </div>
 
     <script>
-        function openLightbox(img) {
+        // Gallery handling for lightbox navigation
+        (function() {
+            const galleryImgs = Array.from(document.querySelectorAll('.gallery-grid img'));
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
-        }
+            let currentIndex = -1;
 
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-        }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeLightbox();
+            function openLightbox(img) {
+                currentIndex = galleryImgs.indexOf(img);
+                if (currentIndex === -1) currentIndex = 0;
+                lightboxImg.src = galleryImgs[currentIndex].src;
+                lightbox.style.display = 'flex';
             }
-        });
 
-        document.addEventListener('contextmenu', function(e) {
-            const lightboxImg = document.getElementById('lightbox-img');
-            if (lightboxImg && lightboxImg === e.target) {
-                e.preventDefault();
+            function closeLightbox() {
+                lightbox.style.display = 'none';
             }
-        }, false);
+
+            function showAt(index) {
+                if (index < 0) index = galleryImgs.length - 1;
+                if (index >= galleryImgs.length) index = 0;
+                currentIndex = index;
+                lightboxImg.src = galleryImgs[currentIndex].src;
+            }
+
+            function next() { showAt(currentIndex + 1); }
+            function prev() { showAt(currentIndex - 1); }
+
+            // Expose openLightbox to inline handlers
+            window.openLightbox = function(img) { openLightbox(img); };
+            window.closeLightbox = function() { closeLightbox(); };
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(event) {
+                if (lightbox.style.display !== 'flex') return;
+                if (event.key === 'Escape') closeLightbox();
+                if (event.key === 'ArrowRight') next();
+                if (event.key === 'ArrowLeft') prev();
+            });
+
+            // Prevent context menu on lightbox image
+            document.addEventListener('contextmenu', function(e) {
+                if (lightboxImg && lightboxImg === e.target) e.preventDefault();
+            }, false);
+
+            // Click handlers for nav buttons
+            const prevBtn = document.querySelector('.lightbox-nav.prev');
+            const nextBtn = document.querySelector('.lightbox-nav.next');
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+        })();
     </script>
 </body>
 
