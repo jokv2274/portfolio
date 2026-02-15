@@ -90,3 +90,45 @@
 .video-card-content p:last-child {
     margin-bottom: 0;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .project-page-video {
+        padding: 20px 6%;
+        align-items: flex-start;
+    }
+
+    .project-video-section {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .project-info-below h1 {
+        font-size: 1.6rem;
+    }
+
+    .project-info-below p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin: 24px 0;
+    }
+
+    .video-card-content {
+        padding: 14px;
+    }
+
+    .video-card-content h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-page-video { padding: 16px 4%; }
+    .project-info-below h1 { font-size: 1.4rem; }
+    .video-card-content p { font-size: 0.95rem; }
+}
