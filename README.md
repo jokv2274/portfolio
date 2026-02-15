@@ -1,3 +1,3 @@
 ## Min portfølje side
 
- - Legg til Favicon
+ - Legg til Favicon ok

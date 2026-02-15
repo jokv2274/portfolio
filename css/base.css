@@ -201,3 +201,28 @@ h1 {
         gap: 10px;
     }
 }
+
+/* Footer */
+.site-footer {
+    background-color: #071226;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    color: #BFCFD8;
+    padding: 28px 0;
+}
+.site-footer .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    text-align: center;
+    font-size: 0.95rem;
+}
+.site-footer a { color: #8FD7F0; }
+
+@media (min-width: 769px) {
+    .site-footer .footer-inner { flex-direction: row; justify-content: space-between; }
+}
+
