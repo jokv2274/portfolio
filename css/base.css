@@ -226,3 +226,8 @@ h1 {
     .site-footer .footer-inner { flex-direction: row; justify-content: space-between; }
 }
 
+/* Prevent Edge Visual Search overlay on large images.
+   Tradeoff: disables pointer events on images with this class (no clicks on the img itself).
+   We add this class automatically via Script.js for images >= 180px. */
+.disable-visual-search { pointer-events: none; }
+
