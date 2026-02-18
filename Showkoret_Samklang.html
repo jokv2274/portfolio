@@ -28,18 +28,72 @@
             </div>
         </section>
         <section class="gallery-section">
+            <h1>Showkoret Samklang</h1>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/images/projects/showkoret/IMG_001.jpg" alt="Showkoret Samklang konserten">
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/projects/showkoret/IMG_002.jpg" alt="Showkoret øving">
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/projects/showkoret/IMG_003.jpg" alt="Samklang scene">
-                </div>
+                <img src="assets/images/projects/backstage/IMG_4152.jpg" alt="Showkoret (placeholder)" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/eiker-rock/eikerrock_2024_Annisette_31.jpg" alt="Showkoret (placeholder)" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/eiker-rock/eikerrock_2024_Annisette_12.jpg" alt="Showkoret (placeholder)" onclick="openLightbox(this)" style="cursor: pointer;">
             </div>
+            <p style="text-align: center; margin-top: 40px;"><a href="index.html#prosjekter" class="cta-btn">Tilbake til Prosjekter</a></p>
         </section>
+
+        <!-- Lightbox modal -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <button class="lightbox-nav prev" aria-label="Forrige">‹</button>
+                <img id="lightbox-img" src="" alt="Full size image" onclick="closeLightbox()" style="cursor: pointer;" draggable="false">
+                <button class="lightbox-nav next" aria-label="Neste">›</button>
+            </div>
+        </div>
+
+        <script>
+            (function() {
+                const galleryImgs = Array.from(document.querySelectorAll('.gallery-grid img'));
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                let currentIndex = -1;
+
+                function openLightbox(img) {
+                    currentIndex = galleryImgs.indexOf(img);
+                    if (currentIndex === -1) currentIndex = 0;
+                    lightboxImg.src = galleryImgs[currentIndex].src;
+                    lightbox.style.display = 'flex';
+                }
+
+                function closeLightbox() {
+                    lightbox.style.display = 'none';
+                }
+
+                function showAt(index) {
+                    if (index < 0) index = galleryImgs.length - 1;
+                    if (index >= galleryImgs.length) index = 0;
+                    currentIndex = index;
+                    lightboxImg.src = galleryImgs[currentIndex].src;
+                }
+
+                function next() { showAt(currentIndex + 1); }
+                function prev() { showAt(currentIndex - 1); }
+
+                window.openLightbox = function(img) { openLightbox(img); };
+                window.closeLightbox = function() { closeLightbox(); };
+
+                document.addEventListener('keydown', function(event) {
+                    if (lightbox.style.display !== 'flex') return;
+                    if (event.key === 'Escape') closeLightbox();
+                    if (event.key === 'ArrowRight') next();
+                    if (event.key === 'ArrowLeft') prev();
+                });
+
+                document.addEventListener('contextmenu', function(e) {
+                    if (lightboxImg && lightboxImg === e.target) e.preventDefault();
+                }, false);
+
+                const prevBtn = document.querySelector('.lightbox-nav.prev');
+                const nextBtn = document.querySelector('.lightbox-nav.next');
+                if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+                if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+            })();
+        </script>
     </main>
 
     <footer class="site-footer">
