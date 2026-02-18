@@ -4,7 +4,7 @@
 - Help AI contributors be productive in this static portfolio site (Norwegian content).
 
 ## Repository overview
-- Multi-page static site: entry page is [index.html](index.html), with additional pages like [om-meg.html](om-meg.html) and [prosjekt-6.html](prosjekt-6.html).
+- Multi-page static site: entry page is [index.html](index.html), with additional pages like [om-meg.html](om-meg.html) and [Eiker_Rock.html](Eiker_Rock.html).
 - Styling lives in [style.css](style.css); minimal client-side behavior (if any) in [Script.js](Script.js).
 - Media assets (images/video) are stored under [assets/](assets/).
 
