@@ -7,7 +7,7 @@
     <meta name="description" content="Prosjekt 2 - filmprosjekt">
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/prosjekt-2.css">
+    <link rel="stylesheet" href="css/bilde-5.css">
 </head>
 <body>
     <nav class="navbar">
@@ -22,14 +22,78 @@
         </div>
     </nav>
     <main class="project-page">
-        <section class="project-hero">
-            <div class="project-image"><img src="assets/images/projects/2.jpg" alt="Prosjekt 2"></div>
-            <div class="project-info">
-                <h1>Prosjekt 2</h1>
-                <p>Rytmisk klipp som deler mennesker og deres miljø. En studie i bevegelse, farge og hvordan øyeblikk forteller deres egen historie.</p>
-                <p><a href="index.html#prosjekter" class="cta-btn">Tilbake til Prosjekter</a></p>
+        <section class="gallery-section">
+            <h1>Prosjekt 2 — Backstage</h1>
+            <div class="gallery-grid">
+                <img src="assets/images/projects/backstage/danvik.jpg" alt="Backstage 1" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/Danvik_8358.jpg" alt="Backstage 2" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/Friitd.jpg" alt="Backstage 3" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/fritid__5843.jpg" alt="Backstage 4" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/fritid__7004.jpg" alt="Backstage 5" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/fritid__7043.jpg" alt="Backstage 6" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/fritud_4349.jpg" alt="Backstage 7" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/IMG_4152.jpg" alt="Backstage 8" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/ViAplay_5166.jpg" alt="Backstage 9" onclick="openLightbox(this)" style="cursor: pointer;">
+                <img src="assets/images/projects/backstage/ViAplay_5436.jpg" alt="Backstage 10" onclick="openLightbox(this)" style="cursor: pointer;">
             </div>
+            <p style="text-align: center; margin-top: 40px;"><a href="index.html#prosjekter" class="cta-btn">Tilbake til Prosjekter</a></p>
         </section>
+
+        <!-- Lightbox modal -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <button class="lightbox-nav prev" aria-label="Forrige">‹</button>
+                <img id="lightbox-img" src="" alt="Full size image" onclick="closeLightbox()" style="cursor: pointer;" draggable="false">
+                <button class="lightbox-nav next" aria-label="Neste">›</button>
+            </div>
+        </div>
+
+        <script>
+            (function() {
+                const galleryImgs = Array.from(document.querySelectorAll('.gallery-grid img'));
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                let currentIndex = -1;
+
+                function openLightbox(img) {
+                    currentIndex = galleryImgs.indexOf(img);
+                    if (currentIndex === -1) currentIndex = 0;
+                    lightboxImg.src = galleryImgs[currentIndex].src;
+                    lightbox.style.display = 'flex';
+                }
+
+                function closeLightbox() { lightbox.style.display = 'none'; }
+
+                function showAt(index) {
+                    if (index < 0) index = galleryImgs.length - 1;
+                    if (index >= galleryImgs.length) index = 0;
+                    currentIndex = index;
+                    lightboxImg.src = galleryImgs[currentIndex].src;
+                }
+
+                function next() { showAt(currentIndex + 1); }
+                function prev() { showAt(currentIndex - 1); }
+
+                window.openLightbox = function(img) { openLightbox(img); };
+                window.closeLightbox = function() { closeLightbox(); };
+
+                document.addEventListener('keydown', function(event) {
+                    if (lightbox.style.display !== 'flex') return;
+                    if (event.key === 'Escape') closeLightbox();
+                    if (event.key === 'ArrowRight') next();
+                    if (event.key === 'ArrowLeft') prev();
+                });
+
+                document.addEventListener('contextmenu', function(e) {
+                    if (lightboxImg && lightboxImg === e.target) e.preventDefault();
+                }, false);
+
+                const prevBtn = document.querySelector('.lightbox-nav.prev');
+                const nextBtn = document.querySelector('.lightbox-nav.next');
+                if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+                if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+            })();
+        </script>
     </main>
 
         <footer class="site-footer">
